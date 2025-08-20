@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QUE SE DESAPAREZCA ESTÁ MRD# XD</title>
+  <style>
+    :root{
+      --glass: rgba(255,255,255,0.92);
+      --ink: #0f172a;
+    }
+    *{box-sizing:border-box}
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: #e5e7eb;
+      background: #0b1020 url('hq720.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100dvh;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: linear-gradient(180deg, rgba(15,23,42,.8), rgba(15,23,42,.35));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(6px);
+      position: sticky; top: 0; z-index: 10;
+    }
+    header img {
+      width: 80px; height: 80px; object-fit: cover;
+      border-radius: 16px; border: 2px solid rgba(236,72,153,.6);
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    h1 { font-size: clamp(18px, 2vw, 28px); margin: 0; }
+
+    .wrap { padding: 16px; max-width: 1200px; margin: 0 auto; }
+
+    .card {
+      background: var(--glass);
+      color: var(--ink);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 12px 0;
+      box-shadow: 0 8px 28px rgba(0,0,0,.25);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 768px){ .grid.cols-2{ grid-template-columns: 1fr 1fr } }
+    @media (min-width: 1200px){ .grid.cols-3{ grid-template-columns: 1fr 1fr 1fr } }
+
+    .dia h3 { margin: 8px 0 12px; font-size: 18px; color: #0f172a; }
+    .hora { margin: 10px 0; font-weight: 600; color: #111827; }
+    .desc { margin: 6px 0 8px; color:#1f2937; }
+    textarea {
+      width: 100%; min-height: 48px; padding: 8px; resize: vertical;
+      border-radius: 10px; border: 1px solid #cbd5e1;
+      background: #f8fafc; color: #0f172a;
+    }
+
+    .uploader { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .uploader input[type=file]{ padding: 8px; background: #111827; color: #e5e7eb; border-radius: 10px; border: 1px solid rgba(255,255,255,.15); }
+
+    .audio-bar { display:flex; align-items:center; gap: 10px; flex-wrap: wrap; }
+    audio { width: 260px; }
+    #playBtn{ padding:8px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.25); background:#111827; color:#e5e7eb; cursor:pointer }
+
+    footer {
+      text-align: center; padding: 12px; margin-top: 20px;
+      background: rgba(0,0,0,0.55); color: #cbd5e1; font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="file_000000007d5061f88ad03e2950b2c2ea.png" alt="Megumin con desayuno" />
+    <h1>QUE SE DESAPAREZCA ESTÁ MRD# XD</h1>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2 style="margin:4px 0 12px;color:#0f172a">Personaliza la página</h2>
+      <div class="uploader" style="margin-bottom:10px">
+        <label>Cambiar fondo (Kinich, etc.): <input type="file" id="bgUploader" accept="image/*" /></label>
+        <small style="color:#334155">Si no subes nada, se usa <b>hq720.jpg</b> del repositorio.</small>
+      </div>
+      <div class="audio-bar">
+        <audio id="player" controls autoplay loop preload="auto" playsinline>
+          <source src="Miguel%20Maintel%20-%20rutina-epica%202025-08-20%2004_36.m4a" type="audio/mp4" />
+          Tu navegador no soporta audio.
+        </audio>
+        <label>Subir música: <input type="file" id="musicUploader" accept="audio/*" /></label>
+        <button id="playBtn" title="Reproducir si el navegador bloquea autoplay">▶ Reproducir</button>
+      </div>
+    </section>
+
+    <section class="grid cols-3">
+      <article class="card dia" id="bloque-lun-jue">
+        <h3>Lunes – Jueves</h3>
+        <div class="hora">Desayuno</div>
+        <div class="desc">Chocolate con pan + 1 fruta (naranja, papaya, etc.). + 1 vaso de agua.</div>
+        <textarea data-key="lun_jue_desayuno" placeholder="Notas…"></textarea>
+
+        <div class="hora">Media mañana</div>
+        <div class="desc">Yogur natural con avena o almendras.</div>
+        <textarea data-key="lun_jue_media" placeholder="Notas…"></textarea>
+
+        <div class="hora">Almuerzo</div>
+        <div class="desc">Arroz integral + pechuga de pollo a la plancha + ensalada (espinaca, zanahoria).</div>
+        <textarea data-key="lun_jue_almuerzo" placeholder="Notas…"></textarea>
+
+        <div class="hora">Merienda</div>
+        <div class="desc">Batido de frutas sin azúcar añadida.</div>
+        <textarea data-key="lun_jue_merienda" placeholder="Notas…"></textarea>
+
+        <div class="hora">Cena</div>
+        <div class="desc">Sopa ligera de verduras + pescado a la plancha.</div>
+        <textarea data-key="lun_jue_cena" placeholder="Notas…"></textarea>
+      </article>
+
+      <article class="card dia" id="bloque-viernes">
+        <h3>Viernes (fuera todo el día, estómago sensible)</h3>
+        <div class="hora">Desayuno</div>
+        <div class="desc">Chocolate con pan + banano maduro + agua.</div>
+        <textarea data-key="vie_desayuno" placeholder="Notas…"></textarea>
+
+        <div class="hora">Snack para llevar</div>
+        <div class="desc">Galletas integrales simples + botella de agua / kumis o yogur natural.</div>
+        <textarea data-key="vie_snack" placeholder="Notas…"></textarea>
+
+        <div class="hora">Almuerzo afuera</div>
+        <div class="desc">Wrap integral de pollo y vegetales, o arroz blanco + pollo/pescado a la plancha + ensalada suave.</div>
+        <textarea data-key="vie_almuerzo" placeholder="Notas…"></textarea>
+
+        <div class="hora">Merienda tarde</div>
+        <div class="desc">Fruta portable (manzana, pera) + agua.</div>
+        <textarea data-key="vie_merienda" placeholder="Notas…"></textarea>
+
+        <div class="hora">Cena</div>
+        <div class="desc">Sopa ligera / arroz blanco con atún y verduras al vapor.</div>
+        <textarea data-key="vie_cena" placeholder="Notas…"></textarea>
+      </article>
+
+      <article class="card dia" id="bloque-sab-dom">
+        <h3>Sábado – Domingo</h3>
+        <div class="hora">Desayuno</div>
+        <div class="desc">Chocolate con pan + papaya.</div>
+        <textarea data-key="sab_dom_desayuno" placeholder="Notas…"></textarea>
+
+        <div class="hora">Media mañana</div>
+        <div class="desc">Frutos secos (poca cantidad).</div>
+        <textarea data-key="sab_dom_media" placeholder="Notas…"></textarea>
+
+        <div class="hora">Almuerzo</div>
+        <div class="desc">Lentejas + ensalada + proteína magra.</div>
+        <textarea data-key="sab_dom_almuerzo" placeholder="Notas…"></textarea>
+
+        <div class="hora">Merienda</div>
+        <div class="desc">Yogur + fruta.</div>
+        <textarea data-key="sab_dom_merienda" placeholder="Notas…"></textarea>
+
+        <div class="hora">Cena</div>
+        <div class="desc">Sopa + huevo hervido con verduras.</div>
+        <textarea data-key="sab_dom_cena" placeholder="Notas…"></textarea>
+      </article>
+    </section>
+
+    <section class="card" style="color:#1f2937">
+      <strong>Recordatorios rápidos:</strong> hidrátate (2 L/día), limita fritos/azúcar/lácteos en exceso, incluye omega‑3 (pescado/chía/linaza), protector solar si la espalda se expone.
+    </section>
+  </main>
+
+  <footer>
+    © 2025 ChatGPT & Maintel — página de prueba/portafolio. Este sitio usa contenido subido por el autor con fines no comerciales.
+  </footer>
+
+  <script>
+    // === Fondo dinámico ===
+    const bgUploader = document.getElementById('bgUploader');
+    if (bgUploader) {
+      bgUploader.addEventListener('change', (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          document.body.style.backgroundImage = `url('${ev.target.result}')`;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // === Música (default del repo + subir archivo) ===
+    const musicUploader = document.getElementById('musicUploader');
+    const player = document.getElementById('player');
+    const playBtn = document.getElementById('playBtn');
+
+    if (musicUploader) {
+      musicUploader.addEventListener('change', (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        const url = URL.createObjectURL(file);
+        player.src = url;
+        player.play().catch(() => {/* ignorar bloqueo de autoplay */});
+      });
+    }
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        player.muted = false;
+        player.play();
+      });
+    }
+
+    // === Notas persistentes (LocalStorage) ===
+    const areas = document.querySelectorAll('textarea[data-key]');
+    areas.forEach((ta) => {
+      const key = 'nota_' + ta.getAttribute('data-key');
+      // cargar al inicio
+      const saved = localStorage.getItem(key);
+      if (saved) ta.value = saved;
+      // guardar en cambios
+      ta.addEventListener('input', () => localStorage.setItem(key, ta.value));
+    });
+  </script>
+</body>
+</html>
